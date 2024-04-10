@@ -14,12 +14,10 @@
 // Returns: A boolean value. True for palindromes, false otherwise.
 bool is_palindrome(std::string str){
 
-    std::transform(str.begin(), str.end(), str.begin(),
-        [](unsigned char c){ return std::tolower(c); });
+    std::transform(str.begin(), str.end(), str.begin(),tolower);
     std::string reverse_string = str;
     reverse(reverse_string.begin(), reverse_string.end());
-    if(reverse_string==str) return true;
-    else return false;
+    return reverse_string==str;
 }
 
 // Main function
